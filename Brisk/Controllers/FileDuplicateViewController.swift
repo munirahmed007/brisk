@@ -74,7 +74,7 @@ final class FileDuplicateViewController: ViewController {
     }
 }
 
-public func radarID(from string: String) -> String? {
+func radarID(from string: String) -> String? {
     guard let text = string.components(separatedBy: "/").last?.strip(), !text.isEmpty else {
         return nil
     }

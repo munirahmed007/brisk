@@ -40,7 +40,7 @@ fileprivate extension NSDraggingInfo {
         return asStrings.map { URL(fileURLWithPath: $0) }
     }
 
-    fileprivate func getAttachments() throws -> [Attachment] {
+    func getAttachments() throws -> [Attachment] {
         if self.files.isEmpty {
             throw AttachmentDropError.noAttachments
         }

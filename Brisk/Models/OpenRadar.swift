@@ -28,7 +28,7 @@ public struct OpenRadar {
 }
 
 public extension String {
-    public func openRadarFromSummary() throws -> OpenRadar {
+    func openRadarFromSummary() throws -> OpenRadar {
         let components = self.components(separatedBy: "\r\n")
         var openRadar = OpenRadar()
         var parts = [String]()

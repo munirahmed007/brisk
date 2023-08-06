@@ -7,7 +7,7 @@ public enum OpenRadarParsingError: Error {
 }
 
 public extension Radar {
-    public init(openRadar json: [String: Any]) throws {
+    init(openRadar json: [String: Any]) throws {
         guard let dictionary = json["result"] as? [String: Any] else {
             throw OpenRadarParsingError.noResult
         }

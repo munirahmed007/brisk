@@ -24,7 +24,7 @@ public extension Radar {
         return try JSONSerialization.data(withJSONObject: JSON, options: [])
     }
 
-    public init?(json: [String: Any]) {
+    init?(json: [String: Any]) {
         guard let title = json["title"] as? String,
             let description = json["description"] as? String,
             let classificationID = json["classification_id"] as? Int,

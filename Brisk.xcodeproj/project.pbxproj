@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		50AA8D372A8046AF00B1BB49 /* build */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 50AA8D3A2A8046AF00B1BB49 /* Build configuration list for PBXAggregateTarget "build" */;
+			buildPhases = (
+				50AA8D3F2A8046C500B1BB49 /* ShellScript */,
+			);
+			dependencies = (
+				50AA8D412A8046E300B1BB49 /* PBXTargetDependency */,
+			);
+			name = build;
+			productName = build;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		1BA2CE444CBF0C961AEF74B3 /* Pods_Brisk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88425AC44C8AB4389F2A583 /* Pods_Brisk.framework */; };
 		493890561F157F16008F9E94 /* AttachmentDroppableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493890551F157F16008F9E94 /* AttachmentDroppableView.swift */; };
@@ -58,6 +73,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		50AA8D402A8046E300B1BB49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C28001CD1D148AB800569A72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C28001D41D148AB800569A72;
+			remoteInfo = Brisk;
+		};
 		C28001E71D148AB800569A72 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C28001CD1D148AB800569A72 /* Project object */;
@@ -400,6 +422,10 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Brisk;
 				TargetAttributes = {
+					50AA8D372A8046AF00B1BB49 = {
+						CreatedOnToolsVersion = 12.4;
+						ProvisioningStyle = Automatic;
+					};
 					C28001D41D148AB800569A72 = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0920;
@@ -434,6 +460,7 @@
 				C28001D41D148AB800569A72 /* Brisk */,
 				C28001E51D148AB800569A72 /* BriskTests */,
 				C28001F01D148AB800569A72 /* BriskUITests */,
+				50AA8D372A8046AF00B1BB49 /* build */,
 			);
 		};
 /* End PBXProject section */
@@ -499,14 +526,12 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Sonar/Sonar.framework",
 				"${PODS_ROOT}/Sparkle/Sparkle.framework",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sonar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -548,6 +573,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		50AA8D3F2A8046C500B1BB49 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Type a script or drag a script file from your workspace to insert its path.\nAPP_SOURCE_PATH=\"$BUILT_PRODUCTS_DIR/Brisk.app\"\nDESTINATION_DIR=\"build\"\n\nrm -rf \"${PROJECT_DIR}/${DESTINATION_DIR}\"\n# Create the destination directory if it doesn't exist\nmkdir -p \"${PROJECT_DIR}/${DESTINATION_DIR}\"\n\n# Copy the app to the destination directory\nmv \"${APP_SOURCE_PATH}\" \"${PROJECT_DIR}/${DESTINATION_DIR}/Brisk.app\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -616,6 +658,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		50AA8D412A8046E300B1BB49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C28001D41D148AB800569A72 /* Brisk */;
+			targetProxy = 50AA8D402A8046E300B1BB49 /* PBXContainerItemProxy */;
+		};
 		C28001E81D148AB800569A72 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C28001D41D148AB800569A72 /* Brisk */;
@@ -641,6 +688,22 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		50AA8D382A8046AF00B1BB49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		50AA8D392A8046AF00B1BB49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		C28001F81D148AB800569A72 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -671,7 +734,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -707,7 +770,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
@@ -725,6 +788,7 @@
 				DSTROOT = /;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Brisk/Resources/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = com.brisk.Brisk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -744,6 +808,7 @@
 				DSTROOT = /;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Brisk/Resources/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = com.brisk.Brisk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -811,6 +876,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		50AA8D3A2A8046AF00B1BB49 /* Build configuration list for PBXAggregateTarget "build" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50AA8D382A8046AF00B1BB49 /* Debug */,
+				50AA8D392A8046AF00B1BB49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C28001D01D148AB800569A72 /* Build configuration list for PBXProject "Brisk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
